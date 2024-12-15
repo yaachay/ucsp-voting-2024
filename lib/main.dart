@@ -15,6 +15,12 @@ class MyApp extends StatelessWidget {
     return Wiredash(
       projectId: Env.projectId,
       secret: Env.secretKey,
+      theme: WiredashThemeData(
+        primaryColor: Palette.primary,
+        firstPenColor: Palette.christmasGreen1,
+        secondPenColor: Palette.secondary,
+        fourthPenColor: Palette.christmasRed1,
+      ),
       child: MaterialApp(
         title: 'UCSP Voting',
         theme: ThemeData(
@@ -27,6 +33,7 @@ class MyApp extends StatelessWidget {
         routes: {
           '/': (context) => const SplashScreen(),
           '/home': (context) => const HomeScreen(),
+          '/bio': (context) => const BioScreen(),
         },
         debugShowCheckedModeBanner: false,
       ),
